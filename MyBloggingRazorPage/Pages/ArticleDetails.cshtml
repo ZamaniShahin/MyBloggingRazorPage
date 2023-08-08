@@ -1,0 +1,15 @@
+﻿@page "{id:int}"
+@model MyBloggingRazorPage.Pages.ArticleDetailsModel
+@{
+}
+<div class="col-12 mb-3">
+    <h1>@Model.Article.Title</h1>
+</div>
+<div class="col-12 mb-3">
+    <img src="./images/@Model.Article.Image" alt="@Model.Article.ImageAlt" title="@Model.Article.ImageTitle" class="img-fluid">
+</div>
+<div class="col-12">
+    <p class="article-content">
+        @Model.Article.Body
+    </p>
+</div>

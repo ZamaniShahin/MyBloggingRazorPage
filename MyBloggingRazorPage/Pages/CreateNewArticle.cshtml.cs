@@ -10,8 +10,6 @@ namespace MyBloggingRazorPage.Pages
         public CreateArticle Command { get; set; }
         [TempData]
         public string ErrorMessage { get; set; }
-        [TempData]
-        public string SuccessMessage { get; set; }
 
         public CreateNewArticleModel(BlogContext context)
         {
@@ -21,19 +19,21 @@ namespace MyBloggingRazorPage.Pages
         {
         }
 
-        public void OnPost(CreateArticle command)
+        public IActionResult OnPost(CreateArticle command)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
+            {
+                ErrorMessage = "لطفا اطلاعات خواسته شده را وارد کنید.";
+                return Page();
+            }
+            else
             {
                 var article = new Article(command.Title, command.Image, command.ImageAlt, command.ImageTitle,
                     command.ShortDescription, command.Body);
                 _context.Articles.Add(article);
                 _context.SaveChanges();
-                SuccessMessage = "عملیات با موفقیت انجام شد.";
-            }
-            else
-            {
-                ErrorMessage = "لطفا اطلاعات خواسته شده را وارد کنید.";
+                return RedirectToPage("./Index");
+
             }
         }
     }

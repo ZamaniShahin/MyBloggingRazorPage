@@ -6,14 +6,8 @@
 <div class="col-12">
     @if (@Model.ErrorMessage != null)
     {
-        <div class="alert alert-success">
+        <div class="alert alert-danger">
             @Model.ErrorMessage
-        </div>
-    }
-    @if (@Model.SuccessMessage != null)
-    {
-        <div class="alert alert-success">
-            @Model.SuccessMessage
         </div>
     }
     <div class="col-6 mr-auto ml-auto text-center">

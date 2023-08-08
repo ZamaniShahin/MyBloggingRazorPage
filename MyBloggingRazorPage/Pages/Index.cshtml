@@ -11,75 +11,18 @@
         </div>
     </div>
 </div>
-<div class="col-4 mb-2">
-    <div class="card">
-        <img src="~/images/lenz.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">عنوان مقاله</h5>
-            <p class="card-text">
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
-            </p>
-            <a href="./article-details.html" class="btn btn-info">ادامه مطلب</a>
+@foreach (var item in Model.Articles)
+{
+    <div class="col-4 mb-2">
+        <div class="card">
+            <img src="~/images/@item.Image" class="card-img-top" alt="@item.ImageAlt">
+            <div class="card-body">
+                <h5 class="card-title">@item.ImageTitle</h5>
+                <p class="card-text">
+                    @item.ShortDescription
+                </p>
+                <a asp-page="./ArticleDetails" asp-route-id="@item.Id" class="btn btn-info">ادامه مطلب</a>
+            </div>
         </div>
     </div>
-</div>
-<div class="col-4 mb-2">
-    <div class="card">
-        <img src="~/images/camp.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">عنوان مقاله</h5>
-            <p class="card-text">
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
-            </p>
-            <a href="#" class="btn btn-info">ادامه مطلب</a>
-        </div>
-    </div>
-</div>
-<div class="col-4 mb-2">
-    <div class="card">
-        <img src="~/images/phanoos.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">عنوان مقاله</h5>
-            <p class="card-text">
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
-            </p>
-            <a href="#" class="btn btn-info">ادامه مطلب</a>
-        </div>
-    </div>
-</div>
-<div class="col-4 mb-2">
-    <div class="card">
-        <img src="~/images/photography.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">عنوان مقاله</h5>
-            <p class="card-text">
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
-            </p>
-            <a href="#" class="btn btn-info">ادامه مطلب</a>
-        </div>
-    </div>
-</div>
-<div class="col-4 mb-2">
-    <div class="card">
-        <img src="~/images/cityinlenz.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">عنوان مقاله</h5>
-            <p class="card-text">
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
-            </p>
-            <a href="#" class="btn btn-info">ادامه مطلب</a>
-        </div>
-    </div>
-</div>
-<div class="col-4 mb-2">
-    <div class="card">
-        <img src="~/images/camp.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">عنوان مقاله</h5>
-            <p class="card-text">
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
-            </p>
-            <a href="#" class="btn btn-info">ادامه مطلب</a>
-        </div>
-    </div>
-</div>
+}
