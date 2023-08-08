@@ -7,7 +7,7 @@ namespace MyBloggingRazorPage.Models
     {
         [DisplayName("عنوان")]
         [Required(ErrorMessage = "لطفا عنوان را وارد کنید.")]
-        [MinLength(15,ErrorMessage = "عنوان شما باید حداقل 15 حرف داشته باشد")]
+        [MinLength(5,ErrorMessage = "عنوان شما باید حداقل 15 حرف داشته باشد")]
         [MaxLength(255,ErrorMessage = "عنوان شما نمیتواند بیشتر از 255 حرف داشته باشد.")]
         public string Title { get; set; }
         [Required(ErrorMessage = "لطفا عکس را وارد کنید.")]

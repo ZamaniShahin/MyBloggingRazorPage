@@ -4,10 +4,16 @@
     ViewData["Title"] = "ایجاد مقاله ی جدید";
 }
 <div class="col-12">
-    @if (ViewData["Success"] != null)
+    @if (@Model.ErrorMessage != null)
     {
         <div class="alert alert-success">
-            @TempData["Success"]
+            @Model.ErrorMessage
+        </div>
+    }
+    @if (@Model.SuccessMessage != null)
+    {
+        <div class="alert alert-success">
+            @Model.SuccessMessage
         </div>
     }
     <div class="col-6 mr-auto ml-auto text-center">
