@@ -7,7 +7,7 @@
     @if (ViewData["Success"] != null)
     {
         <div class="alert alert-success">
-            @ViewData["Success"]
+            @TempData["Success"]
         </div>
     }
     <div class="col-6 mr-auto ml-auto text-center">
@@ -17,29 +17,35 @@
 <form class="mr-auto ml-auto" method="post">
     <div class="form-row">
         <div class="form-group col-md-6">
-            <label for="title">عنوان مقاله</label>
-            <input class="form-control" id="title" name="title">
+            <label asp-for="@Model.Command.Title"></label>
+            <input class="form-control" asp-for="@Model.Command.Title">
+            <span class="text-danger" asp-validation-for="@Model.Command.Title"></span>
         </div>
         <div class="form-group col-md-6">
-            <label for="image">عکس</label>
-            <input class="form-control" id="image" name="image">
+            <label asp-for="@Model.Command.Image"></label>
+            <input class="form-control" asp-for="@Model.Command.Image">
+            <span class="text-danger" asp-validation-for="@Model.Command.Image"></span>
         </div>
         <div class="form-group col-md-6">
-            <label for="imageAlt">ALT عکس</label>
-            <input class="form-control" id="imageAlt" name="imageAlt">
+            <label asp-for="@Model.Command.ImageAlt"></label>
+            <input class="form-control" asp-for="@Model.Command.ImageAlt">
+            <span class="text-danger" asp-validation-for="@Model.Command.ImageAlt"></span>
         </div>
         <div class="form-group col-md-6">
-            <label for="imageTitle">Title عکس</label>
-            <input class="form-control" id="imageTitle" name="imageTitle">
+            <label asp-for="@Model.Command.ImageTitle"></label>
+            <input class="form-control" asp-for="@Model.Command.ImageTitle">
+            <span class="text-danger" asp-validation-for="@Model.Command.ImageTitle"></span>
         </div>
         <div class="form-group col-md-12">
-            <label for="shortDescription">توضیحات کوتاه</label>
-            <textarea class="form-control" id="shortDescription" name="shortDescription"></textarea>
+            <label asp-for="@Model.Command.ShortDescription"></label>
+            <textarea class="form-control" asp-for="@Model.Command.ShortDescription"></textarea>
+            <span class="text-danger" asp-validation-for="@Model.Command.ShortDescription"></span>
         </div>
     </div>
     <div class="form-group">
-        <label for="body">متن مقاله</label>
-        <textarea rows="5" type="text" class="form-control" id="body" name="body"></textarea>
+        <label asp-for="@Model.Command.Body"></label>
+        <textarea rows="5" type="text" class="form-control" asp-for = "@Model.Command.Body"></textarea>
+        <span class="text-danger" asp-validation-for="@Model.Command.Body"></span>
     </div>
     <button type="submit" class="btn btn-success">ارسال</button>
 </form>

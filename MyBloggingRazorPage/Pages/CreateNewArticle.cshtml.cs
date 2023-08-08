@@ -7,6 +7,7 @@ namespace MyBloggingRazorPage.Pages
     public class CreateNewArticleModel : PageModel
     {
         private readonly BlogContext _context;
+        public CreateArticle Command { get; set; }
 
         public CreateNewArticleModel(BlogContext context)
         {
@@ -19,10 +20,10 @@ namespace MyBloggingRazorPage.Pages
         public void OnPost(CreateArticle command)
         {
             var article = new Article(command.Title, command.Image, command.ImageAlt, command.ImageTitle,
-                command.ShortDescription,command.Body);
+                command.ShortDescription, command.Body);
             _context.Articles.Add(article);
             _context.SaveChanges();
-            ViewData["Success"] = "عملیات با موفقیت انجام شد.";
+            TempData["Success"] = "عملیات با موفقیت انجام شد.";
         }
     }
 }
