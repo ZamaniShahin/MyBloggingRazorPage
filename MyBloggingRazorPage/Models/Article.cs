@@ -11,6 +11,7 @@ namespace MyBloggingRazorPage.Models
         public string ImageTitle { get; set; }
         public string ShortDescription { get; set; }
         public string Body { get; set; }
+        public bool IsDeleted { get; set; }
         public DateTime CreationDate { get; set; }
 
         public Article(string title, string image
@@ -23,6 +24,7 @@ namespace MyBloggingRazorPage.Models
             ShortDescription = shortDescription;
             Body = body;
             CreationDate = DateTime.Now;
+            IsDeleted = false;
         }
     }
 }
