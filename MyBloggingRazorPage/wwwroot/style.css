@@ -22,3 +22,6 @@ body{
     text-align: justify;
     line-height: 2;
 }
+.card-img-top{
+    max-height:200px;
+}
