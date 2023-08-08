@@ -4,36 +4,42 @@
     ViewData["Title"] = "ایجاد مقاله ی جدید";
 }
 <div class="col-12">
+    @if (ViewData["Success"] != null)
+    {
+        <div class="alert alert-success">
+            @ViewData["Success"]
+        </div>
+    }
     <div class="col-6 mr-auto ml-auto text-center">
         <h1 class="border-bottom mb-3 text-primary">ایجاد مقاله ی جدید</h1>
     </div>
 </div>
-<form class="mr-auto ml-auto">
+<form class="mr-auto ml-auto" method="post">
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="title">عنوان مقاله</label>
             <input class="form-control" id="title" name="title">
         </div>
         <div class="form-group col-md-6">
-            <label for="picture">عکس</label>
-            <input class="form-control" id="picture" name="picture">
+            <label for="image">عکس</label>
+            <input class="form-control" id="image" name="image">
         </div>
         <div class="form-group col-md-6">
-            <label for="picuteAlt">ALT عکس</label>
-            <input class="form-control" id="picuteAlt" name="picuteAlt">
+            <label for="imageAlt">ALT عکس</label>
+            <input class="form-control" id="imageAlt" name="imageAlt">
         </div>
         <div class="form-group col-md-6">
-            <label for="pictureTitle">Title عکس</label>
-            <input class="form-control" id="pictureTitle" name="pictureTitle">
+            <label for="imageTitle">Title عکس</label>
+            <input class="form-control" id="imageTitle" name="imageTitle">
         </div>
         <div class="form-group col-md-12">
-            <label for="smallDescription">توضیحات کوتاه</label>
-            <textarea class="form-control" id="smallDescription" name="smallDescription"></textarea>
+            <label for="shortDescription">توضیحات کوتاه</label>
+            <textarea class="form-control" id="shortDescription" name="shortDescription"></textarea>
         </div>
     </div>
     <div class="form-group">
         <label for="body">متن مقاله</label>
-        <textarea rows="5" type="text" class="form-control" id="body"></textarea>
+        <textarea rows="5" type="text" class="form-control" id="body" name="body"></textarea>
     </div>
     <button type="submit" class="btn btn-success">ارسال</button>
 </form>
